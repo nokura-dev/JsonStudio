@@ -118,6 +118,8 @@ CSV解析・保存エラーは確認画面内にも表示します。CSVの保�
 
 ## 開発者向け情報
 
+Neutralinojs用の接続コードと設定は`neu/`にあります。起動・ビルド・動作確認は[デスクトップ版の説明](neu/README.md)を参照してください。
+
 以下は、開発用ソースの構成と手順です。開発用の`index.html`は`js/`・`css/`を参照します。配布時は、これらを結合して生成した`index.min.html`を、公開用の`index.html`として配置します。
 
 ### ファイル構成
@@ -243,6 +245,7 @@ macOSのJavaScriptCoreで、プロジェクトのルートから実行できま�
 /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc tests/csv.test.js
 /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc tests/csv-parser.test.js
 /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc tests/csv-data.test.js
+/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc tests/desktop-adapter.test.js
 ```
 
 DOMとファイル操作を模擬し、保存、保存失敗時の復旧、入力候補、並べ替え、SQL・ER図生成、レイアウト保存・復元などを検証します。実際のJSONファイルは書き換えません。ブラウザの描画とPNGの見た目は別途確認が必要です。
