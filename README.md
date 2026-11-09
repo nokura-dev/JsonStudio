@@ -40,6 +40,7 @@ GitHubで配布する`index.html`は、HTML・JavaScript・CSSを結合・ミニ
 ### 2. ファイル一覧・概要・ファイル操作
 
 - 対象は選択フォルダ直下の `.json` ファイルです。サブフォルダ内と、名前がドットで始まるファイルは除きます。一覧では拡張子を省略します。
+- 「TABLES」の上の検索欄でテーブル名を部分一致検索できます。英字の大文字・小文字は区別せず、絞り込み中は「該当件数 / 全件数」を表示します。「×」または検索欄で `Esc` を押すと全件表示に戻ります。検索しても選択中のファイルは維持します。同じフォルダの再読み込みでは検索条件を保ち、別のフォルダを開くと解除します。
 - 一覧の空白部分をクリックするとフォルダ概要に戻ります。テーブル数は対象ファイル数、カラム数は `cols`、レコード数は `data` の要素数の合計です。解析できないJSONのカラム数・レコード数は0件扱いです。
 - 一覧右上の再読み込みボタンで、追加・変更・削除されたファイル一覧および内容を読み込み直せます。未保存の編集がある場合は先に保存し、保存できなければ再読み込みを中止します。
 - 一覧を右クリックして「新しいJSONファイル」、ファイルを右クリックして「ファイル名変更」「ファイル削除」を選べます。拡張子は `.json` 固定です。新規作成後はそのファイルが自動的に選択されます。ファイル削除は確認後に実行し、バックアップは作成しません。
@@ -147,7 +148,7 @@ Neutralinojs用の接続コードと設定は`neu/`にあります。起動・�
 | ファイル読み書き・JSON設定ファイル | `js/filesystem.js` | — |
 | HTMLエスケープ・コピー・ダウンロード・ファイル名 | `js/utils.js` | `css/base.css` |
 | タイトルバー・日時・メニュー・ヘルプ起動 | `js/titlebar.js` | `css/titlebar.css`・`css/menus.css` |
-| ナビゲーター | `js/navigator.js` | `css/navigator.css` |
+| ナビゲーター・テーブル名検索 | `js/navigator.js` | `css/navigator.css` |
 | メタデータ・フォルダ概要・テーブル描画 | `js/workspace.js` | `css/workspace.css` |
 | データ編集の列幅調整・横スクロール | `js/datagrid-layout.js` | `css/designer.css` |
 | テーブル定義・データ編集の操作（追加・削除・並べ替え） | `js/designer.js` | `css/designer.css` |
@@ -258,6 +259,7 @@ macOSのJavaScriptCoreで、プロジェクトのルートから実行できま�
 
 ```sh
 /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc tests/app.test.js
+/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc tests/navigator-search.test.js
 /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc tests/ddl.test.js
 /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc tests/datagrid-layout.test.js
 /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc tests/er-layout.test.js
